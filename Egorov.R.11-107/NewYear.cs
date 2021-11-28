@@ -68,21 +68,33 @@ namespace Egorov.R._11_107
             while (sockets > 0 && area > 0)
             {
                 Console.WriteLine("Введите характеристики гирлянды");
+                Console.WriteLine("Площадь украшаемой поверхности");
                 int area1 = Int32.Parse(Console.ReadLine());
-                bool need = Boolean.Parse(Console.ReadLine());
+                if (area - area1 < 0)
+                {
+                    Console.WriteLine("Гирлянда не может быть повешена. Введите другое значение");
+                    area1 = Int32.Parse(Console.ReadLine());
+                }
+                Console.WriteLine("Кол-во цветов");
                 int color = Int32.Parse(Console.ReadLine());
+                Console.WriteLine("Кол-во режимов");
                 int mod = Int32.Parse(Console.ReadLine());
-                Garland garland = new Garland(area1, need, color, mod);
                 sockets -= 1;
                 area -= area1;
                 Console.WriteLine($"Украшено гирляндой с количеством цветов {color} и количеством режимов {mod}");
             }
             while (area > 0)
             {
+                Console.WriteLine("Введите характеристики игрушки");
+                Console.WriteLine("Площадь украшаемой поверхности");
                 int area1 = Int32.Parse(Console.ReadLine());
-                bool need = Boolean.Parse(Console.ReadLine());
+                if (area - area1 < 0)
+                {
+                    Console.WriteLine("Игрушка не может быть повешена");
+                    break;
+                }
+                Console.WriteLine("Вес игрушки в граммах");
                 double weight = Double.Parse(Console.ReadLine());
-                string fragility = Console.ReadLine();
                 area -= area1;
                 Console.WriteLine($"Украшено игрушкой, которая весит {weight}");
             }
