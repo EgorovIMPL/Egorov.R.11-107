@@ -1,8 +1,8 @@
 ﻿namespace Egorov.R._11_107
 {
-    internal class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
         }
     }
