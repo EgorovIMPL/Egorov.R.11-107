@@ -39,6 +39,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="HomeWork_1.12.2021\NewYear.cs" />
+        <Compile Include="HomeWork_8.12.2021\Extension.cs" />
         <Compile Include="Program.cs" />
     </ItemGroup>
     <ItemGroup>

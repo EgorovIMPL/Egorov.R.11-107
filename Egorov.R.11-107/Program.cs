@@ -1,11 +1,13 @@
-﻿namespace Egorov.R._11_107
+﻿using System;
+using Egorov.R._11_107.HomeWork_8._12._2021;
+
+namespace Egorov.R._11_107
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ChristmasTree tree = new ChristmasTree(12,3,3);
-            NewYear.Decorate(tree);
+            Console.WriteLine(Extension.StringExtension(Console.ReadLine(), Console.ReadLine()));
         }
     }
 }
