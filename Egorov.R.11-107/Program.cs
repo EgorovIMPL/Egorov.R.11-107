@@ -7,7 +7,11 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Extension.StringExtension(Console.ReadLine(), Console.ReadLine()));
+            ComplexNumber z = new ComplexNumber(1, 1);
+            var r = z.Clone();
+            ComplexNumber r1 = r as ComplexNumber;
+            Console.WriteLine(z.ToString());
+            Console.WriteLine(r1.ToString());
         }
     }
 }
