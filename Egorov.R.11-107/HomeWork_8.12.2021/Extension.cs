@@ -7,7 +7,7 @@ namespace Egorov.R._11_107.HomeWork_8._12._2021
     {
         static public string StringExtension(string s1, string s2)
         {
-            string s3 = "";
+            string s3 = null;
             string[] input1 = s1.Split(' ');
             string[] input2 = s2.Split(' ');
             for (int i = 0; i < Math.Min(input1.Length, input2.Length); i++)

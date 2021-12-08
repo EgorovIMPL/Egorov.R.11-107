@@ -8,10 +8,8 @@ namespace Egorov.R._11_107
         static void Main(string[] args)
         {
             ComplexNumber z = new ComplexNumber(1, 1);
-            var r = z.Clone();
-            ComplexNumber r1 = r as ComplexNumber;
-            Console.WriteLine(z.ToString());
-            Console.WriteLine(r1.ToString());
+            var r = z.Clone() as ComplexNumber;
+            Console.WriteLine(r.ToString());
         }
     }
 }
