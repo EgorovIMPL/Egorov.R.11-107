@@ -8,11 +8,7 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            RationalFraction r = new RationalFraction(1, 5);
-            RationalFraction r1 = new RationalFraction(1, 3);
-            RationalFraction r2 = new RationalFraction(1, 2);
-            RationalFraction[] arr = new []{r2, r1, r};
-            Console.WriteLine(r2.CompareTo(r1));
+            
         }
 
         class PlayerPlayOrNot
