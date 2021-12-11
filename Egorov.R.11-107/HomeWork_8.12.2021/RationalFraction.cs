@@ -37,11 +37,11 @@ namespace Egorov.R._11_107.HomeWork_8._12._2021
             int a1 = z / b * a;
             int ra1 = z / r.b * r.a;
             if (a1 > ra1)
-                return -1;
+                return 1;
             else if (a1 == ra1)
                 return 0;
             else
-                return 1;
+                return -1;
         }
         private void reduce_YourSelf()
         {
