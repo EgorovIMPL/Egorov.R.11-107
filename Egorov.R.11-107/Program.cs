@@ -11,6 +11,8 @@ namespace Egorov.R._11_107
         static void Main(string[] args)
         {
             KitchenTechnic tech = new KitchenTechnic("Samsung", 100, EnergyClass.A, "Холодильник", false);
+            Queue queue = new Queue();
+            queue.Read();
             using (StreamWriter sw = new StreamWriter(@"C:\SomeDir2\note.txt",false))
             {
                 sw.WriteLine(tech.Name);

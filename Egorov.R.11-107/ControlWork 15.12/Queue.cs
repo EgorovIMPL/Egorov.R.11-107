@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Xml;
 
 namespace Egorov.R._11_107.ControlWork_15._12
@@ -30,16 +31,23 @@ namespace Egorov.R._11_107.ControlWork_15._12
         }
         public KitchenTechnic Read()
         {
-            KitchenTechnic read = technics[0];
-            KitchenTechnic[] newTechnics = new KitchenTechnic[technics.Length - 1];
-            for (int i = 1; i < index; i++)
+            if (technics[0] is KitchenTechnic)
             {
-                newTechnics[i-1] = technics[i];
+                KitchenTechnic read = technics[0];
+                KitchenTechnic[] newTechnics = new KitchenTechnic[technics.Length - 1];
+                for (int i = 1; i < index; i++)
+                {
+                    newTechnics[i-1] = technics[i];
+                }
+                index--;
+                technics = newTechnics;
+                Console.WriteLine("Сработало чтение");
+                return read;
             }
-            index--;
-            technics = newTechnics;
-            Console.WriteLine("Сработало чтение");
-            return read;
+            else
+            {
+                throw new Exception("Ошибка. Пустая очередь");
+            }
         }
         public void Print()
         {
