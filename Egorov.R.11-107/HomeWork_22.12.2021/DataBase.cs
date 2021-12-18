@@ -21,20 +21,18 @@ namespace Egorov.R._11_107.HomeWork_22._12._2021
         {
             DirectoryInfo c = new DirectoryInfo(@"C:\SomeDir2");
             var r = c.GetFiles();
-            FileInfo name = null;
-            DateTime maxDateTime = new DateTime(1,1,1, 0,0,1);
-            for (int i = 0; i < r.Length; i++)
+            FileInfo name = r[0];
+            DateTime maxDateTime = r[0].CreationTime;
+            for (int i = 1; i < r.Length; i++)
             {
-                string path = @"C:\SomeDir2\" + $"{r[i]}";
-                FileInfo fileInfo = new FileInfo(path);
-                if (fileInfo.CreationTime.CompareTo(maxDateTime) == 1 || fileInfo.CreationTime.CompareTo(maxDateTime) == 0)
+                if (r[i].CreationTime.CompareTo(maxDateTime) == 1 || r[i].CreationTime.CompareTo(maxDateTime) == 0)
                 {
-                    maxDateTime = fileInfo.CreationTime;
+                    maxDateTime = r[i].CreationTime;
                     name = r[i];
                 }
             }
-            string path1 = @"C:\SomeDir2\" + $"{name.ToString()}";
-            using (StreamReader sr = new StreamReader(path1))
+            string path = @"C:\SomeDir2\" + $"{name.ToString()}";
+            using (StreamReader sr = new StreamReader(path))
             {
                 Console.WriteLine(sr.ReadToEnd());
             }
