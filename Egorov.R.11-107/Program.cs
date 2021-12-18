@@ -11,7 +11,7 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            
+            DataBase.FindTime();
         }
     }
 }
