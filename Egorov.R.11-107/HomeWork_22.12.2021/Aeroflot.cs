@@ -6,7 +6,7 @@ namespace Egorov.R._11_107.HomeWork_22._12._2021
         public string Destination;
         public int FlightNumber;
         public string PlaneType;
-        public Aeroflot[] AeroflotArr()
+        public static Aeroflot[] AeroflotArr()
         {
             Aeroflot[] aeroflotArr = new Aeroflot[7];
             for (int i = 0; i < 7; i++)
@@ -38,7 +38,7 @@ namespace Egorov.R._11_107.HomeWork_22._12._2021
             Console.WriteLine("Введите пункт назначения");
             string dest = Console.ReadLine();
             int count = 0;
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (dest == arr[i].Destination)
                 {

@@ -2,9 +2,9 @@
 using System;
 namespace Egorov.R._11_107.HomeWork_22._12._2021
 {
-    public class DataBase
+    public class DateBase
     {
-        public static void Data()
+        public static void Date()
         {
             for (int i = 0; i < 3; i++)
             {
