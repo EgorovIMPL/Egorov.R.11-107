@@ -48,7 +48,9 @@
         <Compile Include="ControlWork 15.12\Technic.cs" />
         <Compile Include="HomeWork_1.12.2021\NewYear.cs" />
         <Compile Include="HomeWork_22.12.2021\Aeroflot.cs" />
+        <Compile Include="HomeWork_22.12.2021\CreateFootBall.cs" />
         <Compile Include="HomeWork_22.12.2021\DateBase.cs" />
+        <Compile Include="HomeWork_22.12.2021\Exam.cs" />
         <Compile Include="HomeWork_22.12.2021\PlaneDot.cs" />
         <Compile Include="HomeWork_22.12.2021\Train.cs" />
         <Compile Include="HomeWork_8.12.2021\ComplexNumber.cs" />
