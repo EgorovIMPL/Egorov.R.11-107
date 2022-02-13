@@ -56,6 +56,8 @@
         <Compile Include="HomeWork_8.12.2021\ComplexNumber.cs" />
         <Compile Include="HomeWork_8.12.2021\Extension.cs" />
         <Compile Include="HomeWork_8.12.2021\RationalFraction.cs" />
+        <Compile Include="HomeWork_AISD_17.02.2022\ArraySubstraction.cs" />
+        <Compile Include="HomeWork_AISD_17.02.2022\SameElArrays.cs" />
         <Compile Include="HomeWork_AISD_17.02.2022\SortedArrayException.cs" />
         <Compile Include="HomeWork_AISD_17.02.2022\TwoSortedArrays.cs" />
         <Compile Include="Program.cs" />
