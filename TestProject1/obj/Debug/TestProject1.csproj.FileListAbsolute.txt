@@ -1,0 +1,11 @@
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\bin\Debug\TestProject1.dll
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\bin\Debug\TestProject1.pdb
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\bin\Debug\nunit.framework.dll
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\bin\Debug\nunit.framework.xml
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\obj\Debug\TestProject1.csproj.AssemblyReference.cache
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\obj\Debug\TestProject1.csproj.CoreCompileInputs.cache
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\obj\Debug\TestProject1.csproj.CopyComplete
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\obj\Debug\TestProject1.dll
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\obj\Debug\TestProject1.pdb
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\bin\Debug\Egorov.R._11_107.exe
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\TestProject1\bin\Debug\Egorov.R._11_107.pdb

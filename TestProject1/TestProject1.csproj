@@ -4,11 +4,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{CFBECE7A-00FF-49DD-B08B-7086E7395A85}</ProjectGuid>
-        <OutputType>Exe</OutputType>
+        <ProjectGuid>{93082873-37B7-4BA4-81C8-281930A7CCE1}</ProjectGuid>
+        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Egorov.R._11_107</RootNamespace>
-        <AssemblyName>Egorov.R._11_107</AssemblyName>
+        <RootNamespace>TestProject1</RootNamespace>
+        <AssemblyName>TestProject1</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -36,35 +37,19 @@
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
+        <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+            <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="BigInt.cs" />
-        <Compile Include="ClassWork\FootBallPlayer.cs" />
-        <Compile Include="ClassWork\IPlayer.cs" />
-        <Compile Include="ClassWork\Musician.cs" />
-        <Compile Include="ControlWork 15.12\KItchenTechnic.cs" />
-        <Compile Include="ControlWork 15.12\Queue.cs" />
-        <Compile Include="ControlWork 15.12\Repare Technic.cs" />
-        <Compile Include="ControlWork 15.12\Technic.cs" />
-        <Compile Include="HomeWork_1.12.2021\NewYear.cs" />
-        <Compile Include="HomeWork_22.12.2021\Aeroflot.cs" />
-        <Compile Include="HomeWork_22.12.2021\CreateFootBall.cs" />
-        <Compile Include="HomeWork_22.12.2021\DateBase.cs" />
-        <Compile Include="HomeWork_22.12.2021\Exam.cs" />
-        <Compile Include="HomeWork_22.12.2021\PlaneDot.cs" />
-        <Compile Include="HomeWork_22.12.2021\Train.cs" />
-        <Compile Include="HomeWork_8.12.2021\ComplexNumber.cs" />
-        <Compile Include="HomeWork_8.12.2021\Extension.cs" />
-        <Compile Include="HomeWork_8.12.2021\RationalFraction.cs" />
-        <Compile Include="HomeWork_AISD_17.02.2022\ArraySubstraction.cs" />
-        <Compile Include="HomeWork_AISD_17.02.2022\KSortedArrays.cs" />
-        <Compile Include="HomeWork_AISD_17.02.2022\SameElArrays.cs" />
-        <Compile Include="HomeWork_AISD_17.02.2022\TwoSortedArrays.cs" />
-        <Compile Include="Program.cs" />
-        <Compile Include="WorkWithFile.cs" />
+        <Compile Include="Tests.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Properties" />
+      <ProjectReference Include="..\Egorov.R.11-107\Egorov.R.11-107.csproj">
+        <Project>{cfbece7a-00ff-49dd-b08b-7086e7395a85}</Project>
+        <Name>Egorov.R.11-107</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

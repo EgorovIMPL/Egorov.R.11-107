@@ -5,15 +5,10 @@ namespace Egorov.R._11_107.HomeWork_AISD_17._02._2022
 {
     public class ArraySubstraction
     {
-        public static int[] Start()
+        public static int[] Start(string path)
         {
-            int[] arr1= new int[1];
-            int[] arr2 = new int[1];
-            using (StreamReader sr = new StreamReader(Console.ReadLine()))
-            {
-                arr1 = Array.ConvertAll(sr.ReadLine().Split(' '), int.Parse);
-                arr2 = Array.ConvertAll(sr.ReadLine().Split(' '), int.Parse);
-            }
+            int[] arr1 = TwoSortedArrays.LineReading(1, path);
+            int[] arr2 = TwoSortedArrays.LineReading(2, path);
             int[] arr = new int[0];
             foreach (int el in arr1)
             {
