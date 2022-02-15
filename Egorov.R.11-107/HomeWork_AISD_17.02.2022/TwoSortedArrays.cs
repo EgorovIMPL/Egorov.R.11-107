@@ -11,7 +11,26 @@ namespace Egorov.R._11_107.HomeWork_AISD_17._02._2022
             if (Directory.Exists(Path.GetDirectoryName(path)) == false || File.Exists(path) == false)
                 throw new Exception("Папка или файл отсутствует");
             string[] arr = File.ReadAllLines(path);
-            return Array.ConvertAll(arr[n - 1].Split(' '), int.Parse);
+            int[] intarr = Array.ConvertAll(arr[n - 1].Split(' '), int.Parse);
+            if(SortOrNot(intarr) == false)
+                throw new Exception("Сортировка нарушена");
+            return intarr;
+        }
+        public static bool SortOrNot(int[] arr)
+        {
+            bool result = true;
+            int[] arr1 = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+                arr1[i] = arr[i];
+            Array.Sort(arr);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] != arr1[i])
+                {
+                    return false;
+                }
+            }
+            return result;
         }
         public static int[] Sorting(int[] arr1, int[] arr2)
         {
