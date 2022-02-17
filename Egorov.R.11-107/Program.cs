@@ -12,7 +12,7 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            TwoSortedArrays.Print(KSortedArrays.Start(@"C:\SomeDir2\arrays.txt"));
+            Console.WriteLine(LargestNumber.Start(@"C:\SomeDir2\arrays2.txt"));
         }
     }
 }

@@ -58,6 +58,7 @@
         <Compile Include="HomeWork_8.12.2021\RationalFraction.cs" />
         <Compile Include="HomeWork_AISD_17.02.2022\ArraySubstraction.cs" />
         <Compile Include="HomeWork_AISD_17.02.2022\KSortedArrays.cs" />
+        <Compile Include="HomeWork_AISD_17.02.2022\LargestNumber.cs" />
         <Compile Include="HomeWork_AISD_17.02.2022\SameElArrays.cs" />
         <Compile Include="HomeWork_AISD_17.02.2022\TwoSortedArrays.cs" />
         <Compile Include="Program.cs" />

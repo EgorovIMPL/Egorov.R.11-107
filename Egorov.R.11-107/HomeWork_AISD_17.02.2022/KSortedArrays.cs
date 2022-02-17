@@ -13,6 +13,7 @@ namespace Egorov.R._11_107.HomeWork_AISD_17._02._2022
             string str = sr.ReadLine();
             if (str.Split(' ').Length != 1)
                 throw new Exception("Не подходит под условие");
+            sr.Dispose();
             int length= Convert.ToInt32(str);
             int[] arr = TwoSortedArrays.LineReading(2, path);
             for (int i = 3; i <= length + 1; i++)
