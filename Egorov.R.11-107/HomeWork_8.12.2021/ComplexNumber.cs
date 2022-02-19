@@ -83,7 +83,7 @@ namespace Egorov.R._11_107.HomeWork_8._12._2021
         {
             return Math.Sqrt(a * a + b * b);
         }
-        public string ToString()
+        public override string ToString()
         {
             string z;
             if (b < 0)
@@ -113,7 +113,6 @@ namespace Egorov.R._11_107.HomeWork_8._12._2021
         }
         public ComplexNumber Pow(double n)
         {
-            double t;
             double z = Math.Pow(Length(), n) * Math.Cos(Arg() * n);
             double z1 = Math.Pow(Length(), n) * Math.Sin(Arg() * n);
             ComplexNumber newZ = new ComplexNumber(z, z1);
