@@ -19,7 +19,7 @@ namespace Egorov.R._11_107
             list.Add(-3);
             list.AddToHead(2);
             list.Add(10, 1);
-            list.AddBeforeAndAfterK(1,3);
+            list.AddBeforeAndAfterK(2,3);
             list.WriteToConsole();
         }
     }

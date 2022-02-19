@@ -1,0 +1,13 @@
+C:\Users\Пользователь\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\bin\Debug\Egorov.R._11_107.exe
+C:\Users\Пользователь\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\bin\Debug\Egorov.R._11_107.pdb
+C:\Users\Пользователь\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R.11-107.csproj.AssemblyReference.cache
+C:\Users\Пользователь\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R.11-107.csproj.CoreCompileInputs.cache
+C:\Users\Пользователь\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R._11_107.exe
+C:\Users\Пользователь\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R._11_107.pdb
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\bin\Debug\Egorov.R._11_107.exe
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\bin\Debug\Egorov.R._11_107.pdb
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R.11-107.csproj.AssemblyReference.cache
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R.11-107.csproj.CoreCompileInputs.cache
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R._11_107.exe
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R._11_107.pdb
+C:\Users\Impl\RiderProjects\Egorov.R.11-107\Egorov.R.11-107\obj\Debug\Egorov.R.11-107.csproj.SuggestedBindingRedirects.cache
