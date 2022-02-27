@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Egorov.R._11_107.ClassWork;
 using Egorov.R._11_107.ControlWork_15._12;
 using Egorov.R._11_107.HomeWork_22._12._2021;
@@ -14,13 +15,15 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            Permutation.TwoNumbersSum(12, 13, 52);
+            string[][] final = Permutation.IncreasingPermutations(new[] {1, 2, 3});
+            foreach (var el in final)
+                Print(el);
         }
-
-        public static void Print(int[] array)
+        public static void Print(string[] array)
         {
             foreach (var el in array)
-                Console.WriteLine(el);
+                Console.Write(el + " ");
+            Console.WriteLine();
         }
     }
 }
