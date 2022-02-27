@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Egorov.R._11_107.ClassWork;
@@ -15,15 +16,12 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            string[][] final = Permutation.IncreasingPermutations(new[] {1, 2, 3});
-            foreach (var el in final)
-                Print(el);
+            CustomDictionary.NumberMoreHalf(new[] {1, 3, 5, 1, 1});
         }
-        public static void Print(string[] array)
+        public static void Print(Couple[] array)
         {
             foreach (var el in array)
-                Console.Write(el + " ");
-            Console.WriteLine();
+                Console.WriteLine(el.Key + " " + el.Value);
         }
     }
 }
