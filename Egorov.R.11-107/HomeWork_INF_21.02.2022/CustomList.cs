@@ -65,7 +65,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 newNode.NextNode = headCopy.NextNode;
             headCopy.NextNode = newNode;
         }
-
+        
         public void DelHead()
         {
             if (head == null)
@@ -218,7 +218,19 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
             }
             return false;
         }
-        
+
+        public void Swap()
+        {
+            Node headCopy = head;
+            int i = 1;
+            while (headCopy != null && headCopy.NextNode != null)
+            {
+                Add(headCopy.NextNode.InfField,i);
+                i += 2;
+                headCopy.NextNode = headCopy.NextNode.NextNode;
+                headCopy = headCopy.NextNode;
+            }
+        }
         public override string ToString()
         {
             var headCopy = head;
