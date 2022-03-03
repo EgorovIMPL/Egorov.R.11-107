@@ -24,6 +24,7 @@ namespace Egorov.R._11_107
             list.Add(9);
             list.Swap();
             list.WriteToConsole();
+            list.WriteToConsole();
         }
         public static void Print(Couple[] array)
         {

@@ -14,17 +14,20 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
             InfField = a;
         }
     }
+
     public class CustomList
     {
         private Node head;
 
-        public CustomList() { }
+        public CustomList()
+        {
+        }
 
         public CustomList(int a)
         {
             head = new Node(a);
         }
-        
+
         public void Add(int a)
         {
             var newNode = new Node(a);
@@ -33,19 +36,20 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 head = newNode;
                 return;
             }
+
             var headCopy = head;
             while (headCopy.NextNode != null)
                 headCopy = headCopy.NextNode;
             headCopy.NextNode = newNode;
         }
-        
-        public void AddToHead(int a) 
+
+        public void AddToHead(int a)
         {
             var newNode = new Node(a);
             newNode.NextNode = head;
             head = newNode;
         }
-        
+
         public void Add(int a, int position)
         {
             if (position == 1)
@@ -53,6 +57,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 AddToHead(a);
                 return;
             }
+
             var headCopy = head;
             for (int i = 1; i <= position - 2; i++)
             {
@@ -60,19 +65,20 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                     throw new ArgumentOutOfRangeException("Список недостаточной длины");
                 headCopy = headCopy.NextNode;
             }
+
             var newNode = new Node(a);
             if (headCopy.NextNode != null)
                 newNode.NextNode = headCopy.NextNode;
             headCopy.NextNode = newNode;
         }
-        
+
         public void DelHead()
         {
             if (head == null)
                 throw new Exception("Список пуст");
             head = head.NextNode;
         }
-        
+
         public void DelLastEl()
         {
             Node headCopy = head;
@@ -88,7 +94,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                     headCopy = headCopy.NextNode;
             }
         }
-        
+
         public void DelPenultEl()
         {
             Node headCopy = head;
@@ -104,7 +110,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                     headCopy = headCopy.NextNode;
             }
         }
-        
+
         public void DelFirstK(int k)
         {
             if (head == null)
@@ -126,7 +132,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 }
             }
         }
-        
+
         public void DelK(int k)
         {
             if (head == null)
@@ -161,7 +167,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 Node headCopy = head;
                 while (headCopy.NextNode != null)
                 {
-                    if(headCopy.NextNode.InfField == k)
+                    if (headCopy.NextNode.InfField == k)
                     {
                         Node newNode = new Node(m);
                         newNode.NextNode = headCopy.NextNode.NextNode;
@@ -176,6 +182,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 }
             }
         }
+
         public int Max()
         {
             Node headCopy = head;
@@ -188,9 +195,10 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 if (headCopy.InfField > maxValue)
                     maxValue = headCopy.InfField;
             }
+
             return maxValue;
         }
-        
+
         public int SumElements()
         {
             Node headCopy = head;
@@ -202,9 +210,10 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 headCopy = headCopy.NextNode;
                 sum += headCopy.InfField;
             }
+
             return sum;
         }
-        
+
         public bool CheckNegativeValue()
         {
             Node headCopy = head;
@@ -216,6 +225,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                     return true;
                 headCopy = headCopy.NextNode;
             }
+
             return false;
         }
 
@@ -225,12 +235,39 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
             int i = 1;
             while (headCopy != null && headCopy.NextNode != null)
             {
-                Add(headCopy.NextNode.InfField,i);
+                Add(headCopy.NextNode.InfField, i);
                 i += 2;
                 headCopy.NextNode = headCopy.NextNode.NextNode;
                 headCopy = headCopy.NextNode;
             }
         }
+
+        public void SwapSecondVersion()
+        {
+            Node headCopy = head;
+            int count = 1;
+            while (headCopy.NextNode != null && headCopy.NextNode.NextNode != null)
+            {
+                if (headCopy == head)
+                {
+                    Node newNode = head.NextNode;
+                    head.NextNode = head.NextNode.NextNode;
+                    newNode.NextNode = head;
+                    head = newNode;
+                    headCopy = head;
+                }
+                else if(count % 2 == 0 )
+                {
+                    Node newNode = headCopy.NextNode;
+                    headCopy.NextNode = newNode.NextNode;
+                    newNode.NextNode = headCopy.NextNode.NextNode;
+                    headCopy.NextNode.NextNode = newNode;
+                }
+                count++;
+                headCopy = headCopy.NextNode;
+            }
+        }
+
         public override string ToString()
         {
             var headCopy = head;
