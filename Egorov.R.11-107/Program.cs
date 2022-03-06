@@ -16,14 +16,8 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            CustomList list = new CustomList(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(6);
-            list.Add(0);
-            list.Add(9);
-            list.Swap();
-            list.WriteToConsole();
+            CustomList<int> list = new CustomList<int>(1);
+            list.AddRange(new int[]{1,2,3,4,0});
             list.WriteToConsole();
         }
         public static void Print(Couple[] array)

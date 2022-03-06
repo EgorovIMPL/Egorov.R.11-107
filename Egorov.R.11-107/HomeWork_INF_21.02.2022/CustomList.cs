@@ -5,32 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 {
-    public class Node
+    public class Node<T>
     {
-        public int InfField;
-        public Node NextNode;
-        public Node(int a) 
+        public T InfField;
+        public Node<T> NextNode;
+        public Node(T a) 
         {
             InfField = a;
         }
     }
 
-    public class CustomList
+    public class CustomList<T>
     {
-        private Node head;
+        private Node<T> head;
 
         public CustomList()
         {
         }
 
-        public CustomList(int a)
+        public CustomList(T a)
         {
-            head = new Node(a);
+            head = new Node<T>(a);
         }
 
-        public void Add(int a)
+        public void Add(T a)
         {
-            var newNode = new Node(a);
+            var newNode = new Node<T>(a);
             if (head == null)
             {
                 head = newNode;
@@ -43,14 +43,14 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
             headCopy.NextNode = newNode;
         }
 
-        public void AddToHead(int a)
+        public void AddToHead(T a)
         {
-            var newNode = new Node(a);
+            var newNode = new Node<T>(a);
             newNode.NextNode = head;
             head = newNode;
         }
 
-        public void Add(int a, int position)
+        public void Add(T a, int position)
         {
             if (position == 1)
             {
@@ -66,10 +66,23 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 headCopy = headCopy.NextNode;
             }
 
-            var newNode = new Node(a);
+            var newNode = new Node<T>(a);
             if (headCopy.NextNode != null)
                 newNode.NextNode = headCopy.NextNode;
             headCopy.NextNode = newNode;
+        }
+
+        public void AddRange(T[] array)
+        {
+            Node<T> headCopy = head;
+            while (headCopy.NextNode != null)
+                headCopy = headCopy.NextNode;
+            foreach (var el in array)
+            {
+                Node<T> newNode = new Node<T>(el);
+                headCopy.NextNode = newNode;
+                headCopy = headCopy.NextNode;
+            }
         }
 
         public void DelHead()
@@ -81,7 +94,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void DelLastEl()
         {
-            Node headCopy = head;
+            Node<T> headCopy = head;
             if (head == null)
                 throw new Exception("Список пуст");
             if (head.NextNode == null)
@@ -97,7 +110,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void DelPenultEl()
         {
-            Node headCopy = head;
+            Node<T> headCopy = head;
             if (head == null)
                 throw new Exception("Список пуст");
             if (head.NextNode == null)
@@ -113,16 +126,18 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void DelFirstK(int k)
         {
+            if (Num.IsNum(head.InfField.ToString()) != true)
+                throw new Exception("Не подходящий формат");
             if (head == null)
-                throw new Exception("Список пуст");
-            if (head.InfField == k)
+                    throw new Exception("Список пуст");
+            if ((Convert.ToInt32(head.InfField) == k))
                 DelHead();
             else
             {
-                Node headCopy = head;
+                Node<T> headCopy = head; 
                 while (headCopy.NextNode != null)
                 {
-                    if (headCopy.NextNode.InfField == k)
+                    if (Convert.ToInt32(headCopy.NextNode.InfField) == k)
                     {
                         headCopy.NextNode = headCopy.NextNode.NextNode;
                         break;
@@ -135,14 +150,16 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void DelK(int k)
         {
+            if (Num.IsNum(head.InfField.ToString()) != true)
+                throw new Exception("Не подходящий формат");
             if (head == null)
                 throw new Exception("Список пуст");
-            if (head.InfField == k)
+            if (Convert.ToInt32(head.InfField) == k)
                 DelHead();
-            Node headCopy = head;
+            Node<T> headCopy = head;
             while (headCopy.NextNode != null)
             {
-                if (headCopy.NextNode.InfField == k)
+                if (Convert.ToInt32(headCopy.NextNode.InfField) == k)
                 {
                     headCopy.NextNode = headCopy.NextNode.NextNode;
                 }
@@ -151,28 +168,30 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
             }
         }
 
-        public void AddBeforeAndAfterK(int k, int m)
+        public void AddBeforeAndAfterK(int k, T m)
         {
+            if (Num.IsNum(head.InfField.ToString()) != true)
+                throw new Exception("Не подходящий формат");
             if (head == null)
                 throw new Exception("Список пуст");
-            if (head.InfField == k)
+            if (Convert.ToInt32(head.InfField) == k)
             {
-                Node newNode = new Node(m);
+                Node<T> newNode = new Node<T>(m);
                 newNode.NextNode = head.NextNode;
                 head.NextNode = newNode;
                 AddToHead(m);
             }
             else
             {
-                Node headCopy = head;
+                Node<T> headCopy = head;
                 while (headCopy.NextNode != null)
                 {
-                    if (headCopy.NextNode.InfField == k)
+                    if (Convert.ToInt32(headCopy.NextNode.InfField) == k)
                     {
-                        Node newNode = new Node(m);
+                        Node<T> newNode = new Node<T>(m);
                         newNode.NextNode = headCopy.NextNode.NextNode;
                         headCopy.NextNode.NextNode = newNode;
-                        Node newNode1 = new Node(m);
+                        Node<T> newNode1 = new Node<T>(m);
                         newNode1.NextNode = headCopy.NextNode;
                         headCopy.NextNode = newNode1;
                         break;
@@ -185,15 +204,17 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public int Max()
         {
-            Node headCopy = head;
+            if (Num.IsNum(head.InfField.ToString()) != true)
+                throw new Exception("Не подходящий формат");
+            Node<T> headCopy = head;
             if (head == null)
                 throw new ArgumentOutOfRangeException("Список пуст");
-            int maxValue = head.InfField;
+            int maxValue = Convert.ToInt32(head.InfField);
             while (headCopy.NextNode != null)
             {
                 headCopy = headCopy.NextNode;
-                if (headCopy.InfField > maxValue)
-                    maxValue = headCopy.InfField;
+                if (Convert.ToInt32(headCopy.InfField) > maxValue)
+                    maxValue = Convert.ToInt32(headCopy.InfField);
             }
 
             return maxValue;
@@ -201,14 +222,16 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public int SumElements()
         {
-            Node headCopy = head;
+            if (Num.IsNum(head.InfField.ToString()) != true)
+                throw new Exception("Не подходящий формат");
+            Node<T> headCopy = head;
             if (headCopy == null)
                 throw new ArgumentOutOfRangeException("Список пуст");
-            int sum = head.InfField;
+            int sum = Convert.ToInt32(head.InfField);
             while (headCopy.NextNode != null)
             {
                 headCopy = headCopy.NextNode;
-                sum += headCopy.InfField;
+                sum += Convert.ToInt32(headCopy.InfField);
             }
 
             return sum;
@@ -216,12 +239,14 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public bool CheckNegativeValue()
         {
-            Node headCopy = head;
+            if (Num.IsNum(head.InfField.ToString()) != true)
+                throw new Exception("Не подходящий формат");
+            Node<T> headCopy = head;
             if (headCopy == null)
                 throw new ArgumentOutOfRangeException("Список пуст");
             while (headCopy != null)
             {
-                if (headCopy.InfField < 0)
+                if (Convert.ToInt32(headCopy.InfField) < 0)
                     return true;
                 headCopy = headCopy.NextNode;
             }
@@ -231,7 +256,7 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void Swap()
         {
-            Node headCopy = head;
+            Node<T> headCopy = head;
             int i = 1;
             while (headCopy != null && headCopy.NextNode != null)
             {
@@ -241,24 +266,20 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
                 headCopy = headCopy.NextNode;
             }
         }
-
         public void SwapSecondVersion()
         {
-            Node headCopy = head;
-            int count = 1;
+            Node<T> headCopy = head;
+            int count = 2;
+            Node<T> newNode = head.NextNode;
+            head.NextNode = head.NextNode.NextNode;
+            newNode.NextNode = head;
+            head = newNode;
+            headCopy = head;
             while (headCopy.NextNode != null && headCopy.NextNode.NextNode != null)
             {
-                if (headCopy == head)
+                if(count % 2 == 0 )
                 {
-                    Node newNode = head.NextNode;
-                    head.NextNode = head.NextNode.NextNode;
-                    newNode.NextNode = head;
-                    head = newNode;
-                    headCopy = head;
-                }
-                else if(count % 2 == 0 )
-                {
-                    Node newNode = headCopy.NextNode;
+                    newNode = headCopy.NextNode;
                     headCopy.NextNode = newNode.NextNode;
                     newNode.NextNode = headCopy.NextNode.NextNode;
                     headCopy.NextNode.NextNode = newNode;
@@ -268,6 +289,20 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
             }
         }
 
+        public void Reverse()
+        {
+            Node<T> headCopy = head.NextNode;
+            Node<T> reverse = new Node<T>(head.InfField);
+            while (headCopy != null)
+            {
+                Node<T> reverseCopy = new Node<T>(headCopy.InfField);
+                reverseCopy.NextNode = reverse;
+                reverse = reverseCopy;
+                headCopy = headCopy.NextNode;
+            }
+            head = reverse;
+        }
+        
         public override string ToString()
         {
             var headCopy = head;
@@ -286,6 +321,21 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
         public void WriteToConsole() 
         {
             Console.WriteLine(ToString());
+        }
+    }
+    public static class Num
+    {
+        public static bool IsNum(this string str)
+        {
+            try
+            {
+                var num = Int32.Parse(str);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
