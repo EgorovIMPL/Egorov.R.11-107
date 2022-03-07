@@ -64,6 +64,7 @@
         <Compile Include="HomeWork_ASD_24.02.2022\CustomDictionary.cs" />
         <Compile Include="HomeWork_ASD_24.02.2022\Permutation.cs" />
         <Compile Include="HomeWork_INF_07.03.2022\CustomArrayCollection.cs" />
+        <Compile Include="HomeWork_INF_07.03.2022\CustomLinkedList.cs" />
         <Compile Include="HomeWork_INF_07.03.2022\ICustomCollection.cs" />
         <Compile Include="HomeWork_INF_21.02.2022\CustomList.cs" />
         <Compile Include="Program.cs" />

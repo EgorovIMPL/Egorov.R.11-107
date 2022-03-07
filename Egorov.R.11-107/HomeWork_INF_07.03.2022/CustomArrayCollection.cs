@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
 namespace Egorov.R._11_107.HomeWork_INF_07._03._2022
 {
     public class CustomArrayCollection<T> : ICustomCollection<T>
     {
         private T[] array;
-
         public CustomArrayCollection() 
         {
             array = new T[0];
@@ -62,7 +63,17 @@ namespace Egorov.R._11_107.HomeWork_INF_07._03._2022
 
         public void RemoveAll(T elem)
         {
-            throw new NotImplementedException();
+            T[] newArray = new T[array.Length];
+            int i = 0;
+            foreach (var el in array)
+            {
+                if (!el.Equals(elem))
+                {
+                    newArray[i] = el;
+                    i++;
+                }
+            }
+            array = newArray.Take(i).ToArray();
         }
 
         public void RemoveAt(int index)
@@ -72,12 +83,16 @@ namespace Egorov.R._11_107.HomeWork_INF_07._03._2022
 
         public void Reverse()
         {
-            throw new NotImplementedException();
+            array.Reverse();
         }
 
         public int Size()
         {
             throw new NotImplementedException();
+        }
+        public override string ToString()
+        {
+            return String.Join(" ", array);
         }
     }
 }
