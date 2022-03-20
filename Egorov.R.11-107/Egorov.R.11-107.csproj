@@ -56,6 +56,7 @@
         <Compile Include="HomeWork_8.12.2021\ComplexNumber.cs" />
         <Compile Include="HomeWork_8.12.2021\Extension.cs" />
         <Compile Include="HomeWork_8.12.2021\RationalFraction.cs" />
+        <Compile Include="HomeWork_ASD_10.03.2022\Task.cs" />
         <Compile Include="HomeWork_ASD_17.02.2022\ArraySubstraction.cs" />
         <Compile Include="HomeWork_ASD_17.02.2022\KSortedArrays.cs" />
         <Compile Include="HomeWork_ASD_17.02.2022\LargestNumber.cs" />
@@ -66,6 +67,7 @@
         <Compile Include="HomeWork_INF_07.03.2022\CustomArrayCollection.cs" />
         <Compile Include="HomeWork_INF_07.03.2022\CustomLinkedList.cs" />
         <Compile Include="HomeWork_INF_07.03.2022\ICustomCollection.cs" />
+        <Compile Include="HomeWork_INF_21..03.2022\CustomLinkedListEnum.cs" />
         <Compile Include="HomeWork_INF_21.02.2022\CustomList.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="WorkWithFile.cs" />

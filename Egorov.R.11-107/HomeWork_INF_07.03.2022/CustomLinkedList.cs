@@ -138,7 +138,30 @@ namespace Egorov.R._11_107.HomeWork_INF_07._03._2022
 
         public int Size()
         {
-            throw new NotImplementedException();
+            LinkedNode<T> headCopy = head;
+            int result = 0;
+            while (headCopy != null)
+            {
+                result++;
+                headCopy = headCopy.NextNode;
+            }
+
+            return result;
+        }
+
+        public T[] ToArray()
+        {
+            T[] array = new T[Size()];
+            LinkedNode<T> headCopy = head;
+            int count = 0;
+            while (headCopy != null)
+            {
+                array[count] = headCopy.InfField;
+                count++;
+                headCopy = headCopy.NextNode;
+            }
+
+            return array;
         }
     }
 }
