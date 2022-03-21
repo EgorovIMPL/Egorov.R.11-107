@@ -99,7 +99,7 @@ namespace Egorov.R._11_107.ControlWork_21._03._2022
                 sb.Append(" " + headCopy.InfField);
                 headCopy = headCopy.NextNode;
             }
-
+            
             return sb.ToString();
         }
     }
