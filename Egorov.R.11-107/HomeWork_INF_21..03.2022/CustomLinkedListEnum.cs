@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using Egorov.R._11_107.HomeWork_INF_07._03._2022;
 
 namespace Egorov.R._11_107.HomeWork_INF_21._03._2022
