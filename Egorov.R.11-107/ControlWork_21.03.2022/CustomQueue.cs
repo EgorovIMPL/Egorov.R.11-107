@@ -72,9 +72,7 @@ namespace Egorov.R._11_107.ControlWork_21._03._2022
         }
         public bool IsEmpty()
         {
-            if (head == null)
-                return true;
-            return false;
+            return head == null;
         }
 
         public T[] ToReverseArray()

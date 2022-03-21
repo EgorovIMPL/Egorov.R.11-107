@@ -38,5 +38,23 @@ namespace TestProject1
             queue.Add(3);
             Assert.AreEqual(queue.Size(), 3);
         }
+        [Test]
+        public void TestDelSecond()
+        {
+            CustomQueue<int> queue = new CustomQueue<int>(1);
+            queue.Add(2);
+            queue.Add(3);
+            queue.DelSecond();
+            Assert.AreEqual(queue.ToString(), "1 3");
+        }
+        [Test]
+        public void TestDelPenultEl()
+        {
+            CustomQueue<int> queue = new CustomQueue<int>(1);
+            queue.Add(2);
+            queue.Add(3);
+            queue.DelPenultEl();
+            Assert.AreEqual(queue.ToString(), "1 3");
+        }
     }
 }
