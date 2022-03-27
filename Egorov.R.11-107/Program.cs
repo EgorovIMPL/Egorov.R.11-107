@@ -21,22 +21,8 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            CustomQueue<int> queue = new CustomQueue<int>(1);
-            queue.Add(2);
-            queue.Add(3);
-            queue.Add(4);
-            queue.DelSecond();
-            queue.DelPenultEl();
-            CustomQueueEnumerable<int> en = new CustomQueueEnumerable<int>(queue);
-            foreach (var el in en)
-            {
-                Console.WriteLine(el);
-            }
-        }
-        public static void Print(Couple[] array)
-        {
-            foreach (var el in array)
-                Console.WriteLine(el.Key + " " + el.Value);
+            Sakhir r = new Sakhir();
+            r.Run(new int[,]{{0,1,0,0},{0,0,1,0}});
         }
     }
 }

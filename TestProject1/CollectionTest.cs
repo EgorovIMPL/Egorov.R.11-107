@@ -29,7 +29,6 @@ namespace TestProject1
             CustomQueue<int> queue = new CustomQueue<int>();
             Assert.True(queue.IsEmpty());
         }
-
         [Test]
         public void TestSize()
         {
