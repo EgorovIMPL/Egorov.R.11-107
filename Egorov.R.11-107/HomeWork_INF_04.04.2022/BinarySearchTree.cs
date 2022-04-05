@@ -8,6 +8,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
     {
         public T Value;
         public int Key;
+        public int Position;
         public BinaryTreeNode<T> LeftChild;
         public BinaryTreeNode<T> RightChild;
         public BinaryTreeNode<T> Parent;
@@ -32,10 +33,10 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
      public class BinarySearchTree<T>
     {
         private BinaryTreeNode<T> root;
-
         public BinarySearchTree(T value, int key)
         {
             root = new BinaryTreeNode<T>(value,key);
+            root.Position = 1;
         }
         /// <summary>
         /// возвращает значение корня дерева
@@ -63,6 +64,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                         if (rootCopy.LeftChild == null)
                         {
                             rootCopy.LeftChild = new BinaryTreeNode<T>(value, key, rootCopy);
+                            rootCopy.LeftChild.Position = rootCopy.Position * 2;
                             return;
                         }
                         else
@@ -73,6 +75,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                         if (rootCopy.RightChild == null)
                         {
                             rootCopy.RightChild = new BinaryTreeNode<T>(value, key, rootCopy);
+                            rootCopy.RightChild.Position = rootCopy.Position * 2 + 1;
                             return;
                         }
                         else
@@ -86,18 +89,22 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public T Parent(int p)
         {
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            if (root.LeftChild == null && root.RightChild == null)
+                throw new Exception("Дерево имеет только корень дерева");
+            while (queue.Count() != 0)
             {
-                if (rootCopy.Key == p)
-                {
-                    return rootCopy.Parent.Value;
-                }
-                else if (rootCopy.Key > p)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Position == p)
+                    return result.Parent.Value;
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
+            Console.WriteLine("Узла с такой поизицией нет, вывод значения корневого узла:");
+            return root.Value;
         }
 
         /// <summary>
@@ -106,18 +113,22 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public T LeftMostChild(int p)
         {
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            if (root.LeftChild == null && root.RightChild == null)
+                throw new Exception("Дерево имеет только корень дерева");
+            while (queue.Count() != 0)
             {
-                if (rootCopy.Key == p)
-                {
-                    return rootCopy.LeftChild.Value;
-                }
-                else if (rootCopy.Key > p)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Position == p && result.LeftChild != null)
+                    return result.LeftChild.Value;
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
+            Console.WriteLine("Узла с такой поизицией нет или узел с данной позицией не имеет левый листочек, вывод значения корневого узла:");
+            return root.Value;
         }
 
         /// <summary>
@@ -126,18 +137,22 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public T RightSibling(int p)
         {
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            if (root.LeftChild == null && root.RightChild == null)
+                throw new Exception("Дерево имеет только корень дерева");
+            while (queue.Count() != 0)
             {
-                if (rootCopy.Key == p)
-                {
-                    return rootCopy.RightChild.Value;
-                }
-                else if (rootCopy.Key > p)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Position == p && result.RightChild != null)
+                    return result.RightChild.Value;
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
+            Console.WriteLine("Узла с такой поизицией нет или узел с данной позицией не имеет правый листочек, вывод значения корневого узла:");
+            return root.Value;
         }
 
         /// <summary>
@@ -145,18 +160,22 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public T Element(int p)
         {
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            if (root.LeftChild == null && root.RightChild == null)
+                throw new Exception("Дерево имеет только корень дерева");
+            while (queue.Count() != 0)
             {
-                if (rootCopy.Key == p)
-                {
-                    return rootCopy.Value;
-                }
-                else if (rootCopy.Key > p)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Position == p)
+                    return result.Value;
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
+            Console.WriteLine("Узла с такой поизицией нет, вывод значения корневого узла:");
+            return root.Value;
         }
 
         /// <summary>
@@ -164,18 +183,21 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public bool IsInternal(int p)
         {
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            if (root.LeftChild == null && root.RightChild == null)
+                throw new Exception("Дерево имеет только корень дерева");
+            while (queue.Count() != 0)
             {
-                if (rootCopy.Key == p)
-                {
-                    return (rootCopy.LeftChild != null || rootCopy.RightChild != null);
-                }
-                else if (rootCopy.Key > p)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Position == p)
+                    return (result.LeftChild != null || result.RightChild != null);
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
+            return false;
         }
 
         /// <summary>
@@ -183,18 +205,21 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public bool IsExternal(int p)
         {
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            if (root.LeftChild == null && root.RightChild == null)
+                throw new Exception("Дерево имеет только корень дерева");
+            while (queue.Count() != 0)
             {
-                if (rootCopy.Key == p)
-                {
-                    return (rootCopy.LeftChild == null && rootCopy.RightChild == null);
-                }
-                else if (rootCopy.Key > p)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Position == p)
+                    return (result.LeftChild == null && result.RightChild == null);
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
+            return false;
         }
 
         /// <summary>
@@ -202,7 +227,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public bool IsRoot(int p)
         {
-            return true;
+            return root.Position == p;
         }
 
         /// <summary>
@@ -210,7 +235,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public bool IsRootByKey(int key)
         {
-            return true;
+            return root.Key == key;
         }
 
         /// <summary>
@@ -218,7 +243,16 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public bool Find(int key)
         {
-            throw new NotImplementedException();
+            BinaryTreeNode<T> rootCopy = root;
+            while (true)
+            {
+                if (rootCopy.Key == key)
+                    return true;
+                else if (rootCopy.Key > key)
+                    rootCopy = rootCopy.LeftChild;
+                else
+                    rootCopy = rootCopy.RightChild;
+            }
         }
         
         /// <summary>
@@ -262,6 +296,17 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public void PreOrderPrint()
         {
+            PreOrderPrint(root);
+        }
+        private void PreOrderPrint(BinaryTreeNode<T> root1)
+        {
+            if(root1 == null)
+                return;
+            Console.Write(root1.Value + " ");
+            if(root1.LeftChild != null)
+                PreOrderPrint(root1.LeftChild);
+            if(root1.RightChild != null)
+                PreOrderPrint(root1.RightChild);
         }
 
 
@@ -273,6 +318,17 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public void InOrderPrint()
         {
+            InOrderPrint(root);
+        }
+        private void InOrderPrint(BinaryTreeNode<T> root1)
+        {
+            if(root1 == null)
+                return;
+            if(root1.LeftChild != null)
+                InOrderPrint(root1.LeftChild);
+            Console.Write(root1.Value + " ");
+            if(root1.RightChild != null)
+                InOrderPrint(root1.RightChild);
         }
 
 
@@ -284,6 +340,17 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public void PostOrderPrint()
         {
+            PostOrderPrint(root);
+        }
+        private void PostOrderPrint(BinaryTreeNode<T> root1)
+        {
+            if(root1 == null)
+                return;
+            if(root1.LeftChild != null)
+                PostOrderPrint(root1.LeftChild);
+            if(root1.RightChild != null)
+                PostOrderPrint(root1.RightChild);
+            Console.Write(root1.Value + " ");
         }
 
         /// <summary>
@@ -291,6 +358,17 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public void PrintDepth()
         {
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            while (queue.Count() != 0)
+            {
+                BinaryTreeNode<T> result = queue.Dequeue();
+                Console.Write(result.Value + " ");
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
+            }
         }
 
         /// <summary>

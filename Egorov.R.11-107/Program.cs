@@ -30,7 +30,7 @@ namespace Egorov.R._11_107
                 tree.Add(Console.ReadLine(),Int32.Parse(Console.ReadLine()));
             }
 
-            tree.Remove(4);
+            tree.PreOrderPrint();
         }
         
     }
