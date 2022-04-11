@@ -26,10 +26,14 @@ namespace Egorov.R._11_107
         static void Main(string[] args)
         {
             BinarySearchTree<string> t = new BinarySearchTree<string>("mama", 4);
-            t.Add("papa",9);
+            t.Add("papa",10);
             t.Add("son",8);
-            t.Add("lusio",7);
-            t.Remove(9);
+            t.Add("lusio",11);
+            t.Add("mercy",3);
+            t.Add("reaper",7);
+            t.Add("mccree",9);
+            
+            t.BigLeftTurn(ref t.root);
             t.PrintDepth();
         }
 

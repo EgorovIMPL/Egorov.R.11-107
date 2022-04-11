@@ -32,7 +32,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
     }
      public class BinarySearchTree<T>
     {
-        private BinaryTreeNode<T> root;
+        public BinaryTreeNode<T> root;
         public BinarySearchTree(T value, int key)
         {
             root = new BinaryTreeNode<T>(value,key);
@@ -54,15 +54,11 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 var rootCopy = root;
                 while (true)
                 {
-                    if (key == rootCopy.Key)
-                    {
-                        rootCopy.Value = value;
-                        return;
-                    }
-                    else if(key < rootCopy.Key)
+                    if(key < rootCopy.Key)
                     {
                         if (rootCopy.LeftChild == null)
                         {
+                            rootCopy.Parent = rootCopy;
                             rootCopy.LeftChild = new BinaryTreeNode<T>(value, key, rootCopy);
                             rootCopy.LeftChild.Position = rootCopy.Position * 2;
                             return;
@@ -74,6 +70,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                     {
                         if (rootCopy.RightChild == null)
                         {
+                            rootCopy.Parent = rootCopy;
                             rootCopy.RightChild = new BinaryTreeNode<T>(value, key, rootCopy);
                             rootCopy.RightChild.Position = rootCopy.Position * 2 + 1;
                             return;
@@ -370,10 +367,25 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// Сбалансировать дерево *
         /// </summary>
         public void Balance() 
-        { 
+        {
+        }
+        public void SmallLeftTurn(ref BinaryTreeNode<T> r)
+        {
+            var newRoot = r.RightChild;
+            r.RightChild = r.RightChild.LeftChild;
+            newRoot.LeftChild = r;
+            r = newRoot;
+        }
+        public void SmallRightTurn(ref BinaryTreeNode<T> r)
+        {
+            var newRoot = r.LeftChild;
+            r.LeftChild = r.LeftChild.RightChild;
+            newRoot.RightChild = r;
+            r = newRoot;
         }
 
-   
-
+        public void BigLeftTurn(ref BinaryTreeNode<T> r)
+        {
+        }
     }
 }
