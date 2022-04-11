@@ -260,28 +260,23 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// </summary>
         public void Remove(int key)
         {
-            if (root.Key == key)
+            Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+            queue.Enqueue(root);
+            BinaryTreeNode<T>[] nodes = new BinaryTreeNode<T>[0];
+            while (queue.Count() != 0)
             {
-                root = null;
-                return;
+                BinaryTreeNode<T> result = queue.Dequeue();
+                if (result.Key != key)
+                    nodes = nodes.Append(new BinaryTreeNode<T>(result.Value,result.Key)).ToArray();
+                if (result.LeftChild != null)
+                    queue.Enqueue(result.LeftChild);
+                if (result.RightChild != null)
+                    queue.Enqueue(result.RightChild);
             }
-            BinaryTreeNode<T> rootCopy = root;
-            while (true)
+            root = nodes[0];
+            for (int i = 1; i < nodes.Length; i++)
             {
-                if (rootCopy.LeftChild.Key == key)
-                {
-                    rootCopy.LeftChild = null;
-                    return;
-                }
-                else if (rootCopy.RightChild.Key == key)
-                {
-                    rootCopy.LeftChild = null;
-                    return;
-                }
-                else if (rootCopy.Key > key)
-                    rootCopy = rootCopy.LeftChild;
-                else
-                    rootCopy = rootCopy.RightChild;
+                Add(nodes[i].Value,nodes[i].Key);
             }
         }
 

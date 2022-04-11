@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Egorov.R._11_107.ClassWork;
+using Egorov.R._11_107.CodeForces;
 using Egorov.R._11_107.ControlWork_15._12;
 using Egorov.R._11_107.HomeWork_22._12._2021;
 using Egorov.R._11_107.HomeWork_8._12._2021;
@@ -24,8 +25,13 @@ namespace Egorov.R._11_107
     {
         static void Main(string[] args)
         {
-            BellFordAlg.Run();
+            BinarySearchTree<string> t = new BinarySearchTree<string>("mama", 4);
+            t.Add("papa",9);
+            t.Add("son",8);
+            t.Add("lusio",7);
+            t.Remove(9);
+            t.PrintDepth();
         }
-        
+
     }
 }
