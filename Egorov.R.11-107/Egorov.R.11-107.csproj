@@ -42,7 +42,6 @@
         <Compile Include="ClassWork\FootBallPlayer.cs" />
         <Compile Include="ClassWork\IPlayer.cs" />
         <Compile Include="ClassWork\Musician.cs" />
-        <Compile Include="CodeForces\EvgeniyPlaylist.cs" />
         <Compile Include="ControlWork 15.12\KItchenTechnic.cs" />
         <Compile Include="ControlWork 15.12\Queue.cs" />
         <Compile Include="ControlWork 15.12\Repare Technic.cs" />
