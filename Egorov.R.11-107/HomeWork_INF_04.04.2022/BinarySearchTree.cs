@@ -32,7 +32,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
     }
      public class BinarySearchTree<T>
     {
-        public BinaryTreeNode<T> root;
+        private BinaryTreeNode<T> root;
         public BinarySearchTree(T value, int key)
         {
             root = new BinaryTreeNode<T>(value,key);
@@ -383,9 +383,16 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
             newRoot.RightChild = r;
             r = newRoot;
         }
-
         public void BigLeftTurn(ref BinaryTreeNode<T> r)
         {
+            SmallRightTurn(ref r.RightChild);
+            SmallLeftTurn(ref r);
+        }
+
+        public void BigRightTurn(ref BinaryTreeNode<T> r)
+        {
+            SmallLeftTurn(ref r.LeftChild);
+            SmallRightTurn(ref r);
         }
     }
 }
