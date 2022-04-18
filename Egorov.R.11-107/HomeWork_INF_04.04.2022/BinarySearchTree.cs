@@ -13,31 +13,34 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         public BinaryTreeNode<T> RightChild;
         public BinaryTreeNode<T> Parent;
 
-        public BinaryTreeNode(T value,int  key, BinaryTreeNode<T> parent = null)
+        public BinaryTreeNode(T value, int key, BinaryTreeNode<T> parent = null)
         {
             Parent = parent;
             Value = value;
-            Key = key ;
+            Key = key;
         }
 
-        public BinaryTreeNode(T value, int key,BinaryTreeNode<T> leftChild,
+        public BinaryTreeNode(T value, int key, BinaryTreeNode<T> leftChild,
             BinaryTreeNode<T> rightChild, BinaryTreeNode<T> parent = null)
         {
             Value = value;
             Key = key;
             Parent = parent;
-            RightChild = rightChild;    
+            RightChild = rightChild;
             LeftChild = leftChild;
         }
     }
-     public class BinarySearchTree<T>
+
+    public class BinarySearchTree<T>
     {
         private BinaryTreeNode<T> root;
+
         public BinarySearchTree(T value, int key)
         {
-            root = new BinaryTreeNode<T>(value,key);
+            root = new BinaryTreeNode<T>(value, key);
             root.Position = 1;
         }
+
         /// <summary>
         /// возвращает значение корня дерева
         /// </summary>
@@ -45,6 +48,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         {
             return root.Value;
         }
+
         public void Add(T value, int key)
         {
             if (root == null)
@@ -54,7 +58,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 var rootCopy = root;
                 while (true)
                 {
-                    if(key < rootCopy.Key)
+                    if (key < rootCopy.Key)
                     {
                         if (rootCopy.LeftChild == null)
                         {
@@ -81,6 +85,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 }
             }
         }
+
         /// <summary>
         /// возвращает значение «родителя» для вершины в позиции p
         /// </summary>
@@ -100,6 +105,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
+
             Console.WriteLine("Узла с такой поизицией нет, вывод значения корневого узла:");
             return root.Value;
         }
@@ -124,7 +130,9 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
-            Console.WriteLine("Узла с такой поизицией нет или узел с данной позицией не имеет левый листочек, вывод значения корневого узла:");
+
+            Console.WriteLine(
+                "Узла с такой поизицией нет или узел с данной позицией не имеет левый листочек, вывод значения корневого узла:");
             return root.Value;
         }
 
@@ -148,7 +156,9 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
-            Console.WriteLine("Узла с такой поизицией нет или узел с данной позицией не имеет правый листочек, вывод значения корневого узла:");
+
+            Console.WriteLine(
+                "Узла с такой поизицией нет или узел с данной позицией не имеет правый листочек, вывод значения корневого узла:");
             return root.Value;
         }
 
@@ -171,6 +181,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
+
             Console.WriteLine("Узла с такой поизицией нет, вывод значения корневого узла:");
             return root.Value;
         }
@@ -194,6 +205,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
+
             return false;
         }
 
@@ -216,6 +228,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
+
             return false;
         }
 
@@ -251,7 +264,7 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
                     rootCopy = rootCopy.RightChild;
             }
         }
-        
+
         /// <summary>
         /// удаление узла, в котором хранится значение
         /// </summary>
@@ -264,16 +277,17 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
             {
                 BinaryTreeNode<T> result = queue.Dequeue();
                 if (result.Key != key)
-                    nodes = nodes.Append(new BinaryTreeNode<T>(result.Value,result.Key)).ToArray();
+                    nodes = nodes.Append(new BinaryTreeNode<T>(result.Value, result.Key)).ToArray();
                 if (result.LeftChild != null)
                     queue.Enqueue(result.LeftChild);
                 if (result.RightChild != null)
                     queue.Enqueue(result.RightChild);
             }
+
             root = nodes[0];
             for (int i = 1; i < nodes.Length; i++)
             {
-                Add(nodes[i].Value,nodes[i].Key);
+                Add(nodes[i].Value, nodes[i].Key);
             }
         }
 
@@ -290,14 +304,15 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         {
             PreOrderPrint(root);
         }
+
         private void PreOrderPrint(BinaryTreeNode<T> root1)
         {
-            if(root1 == null)
+            if (root1 == null)
                 return;
             Console.Write(root1.Value + " ");
-            if(root1.LeftChild != null)
+            if (root1.LeftChild != null)
                 PreOrderPrint(root1.LeftChild);
-            if(root1.RightChild != null)
+            if (root1.RightChild != null)
                 PreOrderPrint(root1.RightChild);
         }
 
@@ -312,14 +327,15 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         {
             InOrderPrint(root);
         }
+
         private void InOrderPrint(BinaryTreeNode<T> root1)
         {
-            if(root1 == null)
+            if (root1 == null)
                 return;
-            if(root1.LeftChild != null)
+            if (root1.LeftChild != null)
                 InOrderPrint(root1.LeftChild);
             Console.Write(root1.Value + " ");
-            if(root1.RightChild != null)
+            if (root1.RightChild != null)
                 InOrderPrint(root1.RightChild);
         }
 
@@ -334,13 +350,14 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         {
             PostOrderPrint(root);
         }
+
         private void PostOrderPrint(BinaryTreeNode<T> root1)
         {
-            if(root1 == null)
+            if (root1 == null)
                 return;
-            if(root1.LeftChild != null)
+            if (root1.LeftChild != null)
                 PostOrderPrint(root1.LeftChild);
-            if(root1.RightChild != null)
+            if (root1.RightChild != null)
                 PostOrderPrint(root1.RightChild);
             Console.Write(root1.Value + " ");
         }
@@ -366,33 +383,8 @@ namespace Egorov.R._11_107.HomeWork_INF_04._04._2022
         /// <summary>
         /// Сбалансировать дерево *
         /// </summary>
-        public void Balance() 
+        public void Balance()
         {
-        }
-        public void SmallLeftTurn(ref BinaryTreeNode<T> r)
-        {
-            var newRoot = r.RightChild;
-            r.RightChild = r.RightChild.LeftChild;
-            newRoot.LeftChild = r;
-            r = newRoot;
-        }
-        public void SmallRightTurn(ref BinaryTreeNode<T> r)
-        {
-            var newRoot = r.LeftChild;
-            r.LeftChild = r.LeftChild.RightChild;
-            newRoot.RightChild = r;
-            r = newRoot;
-        }
-        public void BigLeftTurn(ref BinaryTreeNode<T> r)
-        {
-            SmallRightTurn(ref r.RightChild);
-            SmallLeftTurn(ref r);
-        }
-
-        public void BigRightTurn(ref BinaryTreeNode<T> r)
-        {
-            SmallLeftTurn(ref r.LeftChild);
-            SmallRightTurn(ref r);
         }
     }
 }
