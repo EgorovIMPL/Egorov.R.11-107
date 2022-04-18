@@ -109,27 +109,27 @@ namespace Egorov.R._11_107.HomeWork_INF_18._04._2022
             int right = GetHeight(r.RightChild);
             return left - right;
         }
-        private void SmallLeftTurn(ref AvlNode<T> r) //RR
+        private void SmallLeftTurn(ref AvlNode<T> r) 
         {
             var newRoot = r.RightChild;
             r.RightChild = r.RightChild.LeftChild;
             newRoot.LeftChild = r;
             r = newRoot;
         }
-        private void SmallRightTurn(ref AvlNode<T> r) //LL
+        private void SmallRightTurn(ref AvlNode<T> r)
         {
             var newRoot = r.LeftChild;
             r.LeftChild = r.LeftChild.RightChild;
             newRoot.RightChild = r;
             r = newRoot;
         }
-        private void BigLeftTurn(ref AvlNode<T> r) //LR
+        private void BigLeftTurn(ref AvlNode<T> r)
         {
             SmallRightTurn(ref r.RightChild);
             SmallLeftTurn(ref r);
         }
 
-        private void BigRightTurn(ref AvlNode<T> r) //RL
+        private void BigRightTurn(ref AvlNode<T> r)
         {
             SmallLeftTurn(ref r.LeftChild);
             SmallRightTurn(ref r);
