@@ -64,6 +64,7 @@
         <Compile Include="HomeWork_ASD_17.02.2022\LargestNumber.cs" />
         <Compile Include="HomeWork_ASD_17.02.2022\SameElArrays.cs" />
         <Compile Include="HomeWork_ASD_17.02.2022\TwoSortedArrays.cs" />
+        <Compile Include="HomeWork_ASD_21.04.2022\MaxNumber.cs" />
         <Compile Include="HomeWork_ASD_24.02.2022\CustomDictionary.cs" />
         <Compile Include="HomeWork_ASD_24.02.2022\Permutation.cs" />
         <Compile Include="HomeWork_ASD_24.03.2022\Sakhir.cs" />
