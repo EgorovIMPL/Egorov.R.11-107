@@ -46,6 +46,10 @@
         <Compile Include="ControlWork 15.12\Queue.cs" />
         <Compile Include="ControlWork 15.12\Repare Technic.cs" />
         <Compile Include="ControlWork 15.12\Technic.cs" />
+        <Compile Include="ControlWork_05.05.2022\Event.cs" />
+        <Compile Include="ControlWork_05.05.2022\Linq.cs" />
+        <Compile Include="ControlWork_05.05.2022\Reflection.cs" />
+        <Compile Include="ControlWork_05.05.2022\Tree.cs" />
         <Compile Include="ControlWork_21.03.2022\CustomQueue.cs" />
         <Compile Include="ControlWork_21.03.2022\CustomQueueEnumerable.cs" />
         <Compile Include="HomeWork_1.12.2021\NewYear.cs" />
