@@ -30,7 +30,7 @@ namespace Egorov.R._11_107.ControlWork_05._05._2022
             public List<int> NumberOfProduct { get; set; }
         }
 
-        private List<Check> checkList;
+        private List<Check> checkList = new List<Check>();
 
         public void Run()
         {
@@ -57,6 +57,10 @@ namespace Egorov.R._11_107.ControlWork_05._05._2022
                 new Price {Id = 8, ProductId = 6, Sum = 153, IsActual = true},
                 new Price {Id = 9, ProductId = 7, Sum = 157, IsActual = true}
             };
+            var productsNumber = new List<int> {1,2,3,4,5,6,7 };
+            Console.WriteLine(String.Join(" ",AverageSum(prices)));
+            AddCheck(products,prices,productsNumber);
+            PrintCheck();
             /*Задания              * 
              * 1) создать список счетов (один счет содержит несколько пар цена-количество)
              * например, один счет - это аквариум на 200 литров, два фильтра и термометр
@@ -99,14 +103,14 @@ namespace Egorov.R._11_107.ControlWork_05._05._2022
 
         public void PrintCheck()
         {
-            int sum = 0;
             Console.WriteLine("Наименование услуги, сумма, итого:");
+            int sum = 0;
             foreach (var check in checkList)
             {
                 for (int i = 0; i < check.Product.Count; i++)
                 {
                     sum += Convert.ToInt32(check.Price[i].Sum * check.NumberOfProduct[i]);
-                    Console.WriteLine(check.Product[i].Name + check.Price[i].Sum + sum);
+                    Console.WriteLine(check.Product[i].Name + " " + check.Price[i].Sum + " " + sum);
                 }
             }
         }
