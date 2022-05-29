@@ -69,6 +69,8 @@ namespace Egorov.R._11_107.HomeWork_INF_07._03._2022
 
         public void AddRange(T[] elems)
         {
+            if (head == null)
+                throw new ArgumentOutOfRangeException("Список пуст");
             LinkedNode<T> headCopy = head;
             while (headCopy.NextNode != null)
                 headCopy = headCopy.NextNode;
@@ -123,6 +125,8 @@ namespace Egorov.R._11_107.HomeWork_INF_07._03._2022
 
         public void Reverse()
         {
+            if (head == null)
+                throw new ArgumentOutOfRangeException("Список пуст");
             LinkedNode<T> headCopy = head.NextNode;
             LinkedNode<T> reverse = new LinkedNode<T>(head.InfField);
             while (headCopy != null)

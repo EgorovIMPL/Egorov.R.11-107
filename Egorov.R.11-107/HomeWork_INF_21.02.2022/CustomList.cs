@@ -74,6 +74,8 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void AddRange(T[] array)
         {
+            if (head == null)
+                throw new Exception("Список пуст");
             Node<T> headCopy = head;
             while (headCopy.NextNode != null)
                 headCopy = headCopy.NextNode;
@@ -94,9 +96,9 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void DelLastEl()
         {
-            Node<T> headCopy = head;
             if (head == null)
                 throw new Exception("Список пуст");
+            Node<T> headCopy = head;
             if (head.NextNode == null)
                 head = null;
             while (headCopy.NextNode != null)
@@ -110,11 +112,11 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void DelPenultEl()
         {
-            Node<T> headCopy = head;
             if (head == null)
                 throw new Exception("Список пуст");
             if (head.NextNode == null)
                 throw new Exception("Список длины 1");
+            Node<T> headCopy = head;
             while (headCopy.NextNode != null)
             {
                 if (headCopy.NextNode.NextNode != null && headCopy.NextNode.NextNode.NextNode == null)
@@ -206,9 +208,9 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
         {
             if (Num.IsNum(head.InfField.ToString()) != true)
                 throw new Exception("Не подходящий формат");
-            Node<T> headCopy = head;
             if (head == null)
                 throw new ArgumentOutOfRangeException("Список пуст");
+            Node<T> headCopy = head;
             int maxValue = Convert.ToInt32(head.InfField);
             while (headCopy.NextNode != null)
             {
@@ -222,11 +224,11 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public int SumElements()
         {
+            if (head == null)
+                throw new ArgumentOutOfRangeException("Список пуст");
             if (Num.IsNum(head.InfField.ToString()) != true)
                 throw new Exception("Не подходящий формат");
             Node<T> headCopy = head;
-            if (headCopy == null)
-                throw new ArgumentOutOfRangeException("Список пуст");
             int sum = Convert.ToInt32(head.InfField);
             while (headCopy.NextNode != null)
             {
@@ -239,11 +241,11 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public bool CheckNegativeValue()
         {
+            if (head == null)
+                throw new ArgumentOutOfRangeException("Список пуст");
             if (Num.IsNum(head.InfField.ToString()) != true)
                 throw new Exception("Не подходящий формат");
             Node<T> headCopy = head;
-            if (headCopy == null)
-                throw new ArgumentOutOfRangeException("Список пуст");
             while (headCopy != null)
             {
                 if (Convert.ToInt32(headCopy.InfField) < 0)
@@ -256,6 +258,8 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
 
         public void Swap()
         {
+            if (head == null)
+                throw new ArgumentOutOfRangeException("Список пуст");
             Node<T> headCopy = head;
             int i = 1;
             while (headCopy != null && headCopy.NextNode != null)
@@ -268,6 +272,8 @@ namespace Egorov.R._11_107.HomeWork_INF_21._02._2022
         }
         public void SwapSecondVersion()
         {
+            if (head == null)
+                throw new ArgumentOutOfRangeException("Список пуст");
             Node<T> headCopy = head;
             int count = 2;
             Node<T> newNode = head.NextNode;
