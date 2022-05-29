@@ -23,10 +23,10 @@ namespace Egorov.R._11_107.HomeWork_INF_25._04._2022
         }
         public void Run()
         {
-            DangerHandler += PowerStation.ev_DangerHandler;
+            DangerHandler += ev_DangerHandler;
             Reactor();
         }
-        public static void ev_DangerHandler(object sender, DangerEventArgs danger)
+        private static void ev_DangerHandler(object sender, DangerEventArgs danger)
         {
             MCHS mchs = new MCHS();
             FireStation fs = new FireStation();
