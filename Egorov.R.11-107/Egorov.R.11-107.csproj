@@ -39,6 +39,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="BigInt.cs" />
+        <Compile Include="ClassWorkLinkQ.cs" />
         <Compile Include="ClassWork\FootBallPlayer.cs" />
         <Compile Include="ClassWork\IPlayer.cs" />
         <Compile Include="ClassWork\Musician.cs" />
